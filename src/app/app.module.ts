@@ -1,3 +1,5 @@
+import { LoginService } from './services/login.service';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { BeerService } from './services/beer.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,12 +9,13 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 
 import { AddbeersComponent } from './addbeers/addbeers.component';
+import { LoginComponent } from './login/login.component';
 
 export const firebaseConf = {
   production: false,
   firebase: {
     apiKey: 'AIzaSyA4OYNTBgsCUicjPYFbQIlI9M9j5qhODjk',
-    authDomain: 'localhost',
+    authDomain: 'beer-ping.firebaseapp.com',
     databaseURL: 'https://beer-ping.firebaseio.com/',
     projectId: 'beer-ping',
     storageBucket: 'gs://beer-ping.appspot.com',
@@ -23,15 +26,17 @@ export const firebaseConf = {
 @NgModule({
   declarations: [
     AppComponent,
-    AddbeersComponent
+    AddbeersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConf.firebase)
+    AngularFireModule.initializeApp(firebaseConf.firebase),
+    AngularFireAuthModule
   ],
-  providers: [BeerService],
+  providers: [BeerService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
