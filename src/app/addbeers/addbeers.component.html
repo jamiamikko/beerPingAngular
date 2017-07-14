@@ -1,0 +1,45 @@
+<h4>
+  Add beers</h4>
+<div class="form-container">
+  <form class="addBeers" #addBeerForm="ngForm" (ngSubmit)="addBeers(addBeerForm.value)">
+    <label><b>Beer name</b></label>
+    <br>
+    <input type="text" name="beername" ngModel>
+    <br><br>
+    <label><b>ABV</b></label>
+    <br>
+    <input type="text" name="abv" ngModel>
+    <br><br>
+    <label><b>IBU</b></label>
+    <br>
+    <input type="text" name="ibu" ngModel>
+    <br><br>
+    <label><b>Price</b></label>
+    <br>
+    <input type="text" name="price" ngModel>
+    <br><br>
+    <label><b>Description</b></label>
+    <br>
+    <input type="text" name="description" ngModel>
+    <br><br>
+    <label><b>Country</b></label>
+    <br>
+    <input type="text" name="country" ngModel>
+    <br><br>
+    <label><b>Brewer</b></label>
+    <br>
+    <input type="text" name="brewer" ngModel>
+    <br><br>
+    <label><b>Type</b></label>
+    <br>
+    <input type="text" name="type" ngModel>
+    <br><br>
+    <label><b>Style</b></label>
+    <br>
+    <input type="text" name="style" ngModel>
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+  </form>
+</div>
